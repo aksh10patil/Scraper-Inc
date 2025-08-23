@@ -35,6 +35,47 @@
 /* body {
   cursor: none;
 } */
+/* Hide default cursor */
+/* Hide default cursor */
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Glowing cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,230,250,0.9), rgba(147,112,219,0.6));
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(230,230,250,0.9), 0 0 35px rgba(186,85,211,0.7);
+  z-index: 9999;
+  transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+  animation: orbPulse 2s infinite;
+}
+
+.custom-cursor.click {
+  animation: clickBurst 0.5s forwards;
+}
+
+/* Trail particles */
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(186,85,211,0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(186,85,211,0.7);
+  animation: fadeOut 0.6s forwards;
+  z-index: 9998;
+}
 
 
 /* Custom glowing cursor */
@@ -70,6 +111,23 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+@keyframes auraSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1.1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1.1); }
+}
+@keyframes clickBurst {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
 }
 
 body {
