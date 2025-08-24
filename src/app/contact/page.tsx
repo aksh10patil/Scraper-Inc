@@ -1,118 +1,84 @@
 import React from 'react'
 
+
 const contact = () => {
   return (
-    export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    accepted: false,
-  });
+    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex flex-col items-center px-6 py-16">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12">
+        
+        {/* Left Side: Text */}
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            We’re ready to <br />
+            <span className="text-blue-400">hear from you!</span>
+          </h1>
+          <p className="text-lg text-gray-300">
+            We love what we do, and even more to do it from anywhere.  
+            Our offices are open to you. Use this as an excuse to visit 
+            and discover why the iconic is created here, surrounded by the best.  
+          </p>
+        </div>
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+        {/* Right Side: Form */}
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg">
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                Name*
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full p-3 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              />
+            </div>
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Submitted: ", formData);
-    // You can hook this with backend API or services like Formspree, Nodemailer, etc.
-  };
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                Email*
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full p-3 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              />
+            </div>
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0d0f1b] to-[#1a1630] text-white flex flex-col items-center py-20 px-6">
-      {/* Header Section */}
-      <div className="max-w-4xl text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          We’re ready to hear from <span className="text-indigo-400">you!</span>
-        </h1>
-        <p className="text-gray-300 leading-relaxed">
-          We love what we do, and even more to do it from Alicante. Although we
-          work in a hybrid way, our offices in Alicante and Madrid are open to
-          you. Use us as an excuse to visit and discover why the iconic is
-          created here, surrounded by the Mediterranean.
-        </p>
+            <div>
+              <label htmlFor="phone" className="block mb-2 text-sm font-medium">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                className="w-full p-3 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block mb-2 text-sm font-medium">
+                Message*
+              </label>
+              <textarea
+                id="message"
+                rows={4}
+                className="w-full p-3 rounded-lg bg-transparent border border-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
       </div>
-
-      {/* Contact Form */}
-      <form
-        onSubmit={handleSubmit}
-        className="mt-12 w-full max-w-xl space-y-6"
-      >
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name*"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full bg-transparent border-b border-gray-500 focus:border-indigo-400 outline-none py-2"
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email*"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full bg-transparent border-b border-gray-500 focus:border-indigo-400 outline-none py-2"
-          />
-        </div>
-        <div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full bg-transparent border-b border-gray-500 focus:border-indigo-400 outline-none py-2"
-          />
-        </div>
-        <div>
-          <textarea
-            name="message"
-            placeholder="Message*"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows={4}
-            className="w-full bg-transparent border-b border-gray-500 focus:border-indigo-400 outline-none py-2"
-          />
-        </div>
-        <div className="flex items-center gap-2 text-sm">
-          <input
-            type="checkbox"
-            name="accepted"
-            checked={formData.accepted}
-            onChange={handleChange}
-            required
-          />
-          <label>
-            I have read and accept the{" "}
-            <a href="#" className="text-indigo-400 underline">
-              data protection law
-            </a>
-            *
-          </label>
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-indigo-500 hover:bg-indigo-600 transition rounded-lg py-3 font-semibold"
-        >
-          Send Message
-        </button>
-      </form>
     </div>
   )
 }

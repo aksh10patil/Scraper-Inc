@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react"; // install lucide-react for icons
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Services", href: "/services" },
@@ -12,12 +12,39 @@ const navItems = [
   { name: "Contact", href: "/contact" },
 ];
 
+function NavLink({
+  href,
+  label,
+  active,
+  onClick,
+  className = "",
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+  onClick?: () => void;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`relative font-bold font-['Montserrat'] transition-all duration-200 ${className}
+        ${active ? "after:w-full" : "after:w-0"}
+        after:block after:h-[2px] after:bg-white after:transition-all after:duration-300 after:mt-1 after:rounded
+        hover:after:w-full`}
+    >
+      {label}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-black">
+    <nav className="relative flex items-center justify-between px-6 py-4 bg-black">
       {/* Logo */}
       <div className="text-2xl font-extrabold tracking-wide text-white font-['Montserrat']">
         Scraper
@@ -26,30 +53,20 @@ export default function Navbar() {
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-8">
         {navItems.map((item) => (
-          <Link
+          <NavLink
             key={item.href}
             href={item.href}
-            className={`relative text-white font-bold font-['Montserrat'] transition-all duration-200 
-              ${pathname === item.href ? "after:w-full" : "after:w-0"}
-              after:block after:h-[2px] after:bg-white after:transition-all after:duration-300 after:mt-1 after:rounded
-              hover:after:w-full`}
-          >
-            {item.name}
-          </Link>
+            label={item.name}
+            active={pathname === item.href}
+            className="text-white"
+          />
         ))}
       </div>
-                <button
-            className="relative text-white font-bold font-montserrat transition-all duration-200
-                after:block after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:mt-1 after:rounded
-                hover:after:w-full"
-            >
-            Book Now !
-            </button>
 
-      {/* Mobile Menu Button */} 
+      {/* Mobile Menu Button */}
       <button
         className="md:hidden text-white"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setIsOpen((prev) => !prev)}
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
@@ -58,17 +75,14 @@ export default function Navbar() {
       {isOpen && (
         <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center space-y-6 py-6 md:hidden z-50">
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.href}
               href={item.href}
+              label={item.name}
+              active={pathname === item.href}
               onClick={() => setIsOpen(false)}
-              className={`relative text-white font-bold font-['Montserrat'] text-lg transition-all duration-200 
-                ${pathname === item.href ? "after:w-full" : "after:w-0"}
-                after:block after:h-[2px] after:bg-white after:transition-all after:duration-300 after:mt-1 after:rounded
-                hover:after:w-full`}
-            >
-              {item.name}
-            </Link>
+              className="text-white text-lg"
+            />
           ))}
         </div>
       )}
