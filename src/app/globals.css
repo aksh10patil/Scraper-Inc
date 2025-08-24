@@ -5,17 +5,10 @@
   --foreground: #171717;
 }
 
-
-/* src/app/globals.css */
-/* src/app/globals.css */
-/* src/app/globals.css */
-/* src/app/globals.css */
-/* src/app/globals.css */
-/* src/app/globals.css */
 .gradient-background {
   background: radial-gradient(
       circle at top center,
-      rgba(230, 230, 250, 0.6),   /* glowing lavender */
+      rgba(32, 1, 1, 0.203),   /* glowing lavender */
       rgba(186, 85, 211, 0.3),    /* orchid fade */
       transparent 70%
     ),
@@ -30,14 +23,6 @@
   width: 100%;
 }
 
-
-/* Hide default cursor */
-/* body {
-  cursor: none;
-} */
-/* Hide default cursor */
-/* Hide default cursor */
-/* Hide default cursor */
 body {
   cursor: none;
 }
@@ -76,27 +61,6 @@ body {
   animation: fadeOut 0.6s forwards;
   z-index: 9998;
 }
-
-
-/* Custom glowing cursor */
-/* .custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background: radial-gradient(circle, rgba(230,230,250,0.9), rgba(147,112,219,0.6));
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px rgba(230,230,250,0.8), 0 0 40px rgba(147,112,219,0.6);
-  z-index: 9999;
-  transition: transform 0.1s ease-out;
-} */
-
-
-
-
 
 
 @theme inline {

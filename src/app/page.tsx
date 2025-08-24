@@ -1,6 +1,7 @@
 "use client";
 
 import FeatureCard from "../../public/components/FeatureCard";
+import Footer from "../../public/components/Footer";
 import Hero from "../../public/components/Hero";
 import Navbar from "../../public/components/Navbar";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <FeatureCard />
+      <Footer />
 
       </div>
 

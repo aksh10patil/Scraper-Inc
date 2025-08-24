@@ -159,10 +159,6 @@ const DualDirectionSlidingFeatures: React.FC<DualDirectionSlidingFeaturesProps> 
         .dual-slider {
           min-height: 100vh;
           padding: 3rem 0;
-          background: 
-            linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%),
-            radial-gradient(ellipse at top, rgba(147, 112, 219, 0.06), transparent 50%),
-            radial-gradient(ellipse at bottom, rgba(75, 0, 130, 0.08), transparent 50%);
           position: relative;
           overflow: hidden;
           display: flex;
@@ -457,28 +453,6 @@ const DualDirectionSlidingFeatures: React.FC<DualDirectionSlidingFeaturesProps> 
           height: 100%;
           z-index: 10;
           pointer-events: none;
-        }
-        
-        .fade-left {
-          left: 0;
-          background: linear-gradient(
-            to right,
-            rgba(10, 10, 10, 1) 0%,
-            rgba(26, 26, 46, 0.9) 25%,
-            rgba(22, 33, 62, 0.7) 50%,
-            transparent 100%
-          );
-        }
-        
-        .fade-right {
-          right: 0;
-          background: linear-gradient(
-            to left,
-            rgba(10, 10, 10, 1) 0%,
-            rgba(26, 26, 46, 0.9) 25%,
-            rgba(22, 33, 62, 0.7) 50%,
-            transparent 100%
-          );
         }
         
         @keyframes slideLeftVisible {
