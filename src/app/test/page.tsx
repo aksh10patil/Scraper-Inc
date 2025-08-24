@@ -1,17 +1,5 @@
 'use client';
 
-<<<<<<< HEAD
-const test = () => {
-  return (
-    <> 
-    <div>Test button Page edited</div>
-    
-    
-    </>
-
-   
-  )
-=======
 import React from 'react';
 
 interface FeatureCard {
@@ -19,7 +7,6 @@ interface FeatureCard {
   description: string;
   metric?: string;
   category: string;
->>>>>>> 301a9cb1e4e8f892cd3fdac6bab9984454f1af50
 }
 
 interface DualDirectionSlidingFeaturesProps {
