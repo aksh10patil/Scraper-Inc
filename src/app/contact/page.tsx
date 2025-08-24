@@ -28,7 +28,6 @@ const Page = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
   };
 
   return (
@@ -37,7 +36,7 @@ const Page = () => {
         {/* Left side - Text content */}
         <div className="text-white space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            We're ready to <br />
+            We&apos;re ready to <br />
             hear from <span className="text-pink-300">you!</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-md">
