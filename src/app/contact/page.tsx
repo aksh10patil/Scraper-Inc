@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const Contact = () => {
+const Page = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,7 +11,7 @@ const Contact = () => {
     acceptData: false
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e : any) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -19,7 +19,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     // Handle form submission here
@@ -463,4 +463,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Page;
