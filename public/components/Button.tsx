@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const PearlButton: React.FC = () => {
+const Button: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -68,10 +68,10 @@ const PearlButton: React.FC = () => {
         onMouseLeave={() => setIsHovered(false)}
         onMouseDown={() => setIsActive(true)}
         onMouseUp={() => setIsActive(false)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setIsActive(false);
-        }}
+        // onMouseLeave={() => {
+        //   setIsHovered(false);
+        //   setIsActive(false);
+        // }}
       >
         <div
           className="relative px-11 py-8 text-2xl font-medium text-white text-opacity-70"
@@ -103,4 +103,4 @@ const PearlButton: React.FC = () => {
   );
 };
 
-export default PearlButton;
+export default Button;
