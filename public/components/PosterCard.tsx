@@ -6,7 +6,7 @@ import styled from "styled-components";
 // ✅ Dummy images (replace with real images or SVGs)
 const projectImages = [
   "/landing_1.webp",
-    "/landing_1.webp",
+    "/landing_2.webp",
     "/landing_1.webp",
 ];
 
@@ -31,12 +31,12 @@ const PosterCard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen gradient-background flex">
+    <div className="min-h-screen  flex">
       {/* Left Content */}
       <div className="flex-1 flex items-center justify-start pl-16">
         <div className="text-white space-y-8 max-w-lg">
           <h3 className="text-lg font-light tracking-wide opacity-80">
-            El Ganso
+           Our Projects
           </h3>
           <h1 className="text-5xl lg:text-6xl font-light leading-tight">
             Translating instinctive character into global projection

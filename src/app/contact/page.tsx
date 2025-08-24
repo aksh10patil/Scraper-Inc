@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import Navbar from '../../../public/components/Navbar';
+import Footer from '../../../public/components/Footer';
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +33,8 @@ const Page = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen flex items-center justify-center p-4 gradient-background">
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
         {/* Left side - Text content */}
@@ -132,6 +136,8 @@ const Page = () => {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
