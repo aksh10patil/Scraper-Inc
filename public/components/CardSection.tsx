@@ -21,11 +21,31 @@ const cards = [
     title: "Brands with soul but no direction are destined to drift",
     bg: "bg-gradient-to-br from-indigo-900/70 via-purple-900/70 to-blue-900/70",
   },
+  {
+    id: "id-4",
+    category: "From storytelling to story providing",
+    title: "Brands with soul but no direction are destined to drift",
+    bg: "bg-gradient-to-br from-indigo-900/70 via-purple-900/70 to-blue-900/70",
+  },
+  {
+    id: "id-5",
+    category: "Brand Evolution",
+    title: "What does Gen Z really believe when they follow a brand?",
+    bg: "bg-gradient-to-br from-purple-600/70 via-pink-600/70 to-teal-600/70",
+  },
+  {
+    id: "id-6",
+    category: "Brand Evolution",
+    title: "Brands don't evolve on autopilot: the Art of managing the inevitable",
+    bg: "bg-gradient-to-br from-cyan-500/60 via-blue-900/70 to-purple-900/70",
+  },
+  
+
 ];
 
 export default function CardsSection() {
   return (
-    <section className="px-6 py-16 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section className="px-6 py-16">
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {cards.map((card) => (
           <Link
