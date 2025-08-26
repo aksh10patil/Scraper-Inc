@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
 export default function About() {
   const { scrollY } = useScroll();
@@ -19,8 +21,10 @@ export default function About() {
 
   return (
     <>
+    <Navbar />
+    <div className="gradient-background">
       {/* Section 1 - Collaborating with Genuine Brands */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 bg-gradient-to-b from-black via-purple-900 to-black text-white overflow-hidden">
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 text-white overflow-hidden">
         {/* Text */}
         <div className="flex-1 max-w-2xl space-y-6 z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
@@ -50,7 +54,7 @@ export default function About() {
       </section>
 
       {/* Section 2 - Brand Evolution Studio */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 text-white bg-gradient-to-b from-black via-purple-950 to-black text-center">
+      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 text-white text-center">
         <div className="max-w-4xl space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold">
             We are a Brand Evolution Studio.
@@ -65,7 +69,7 @@ export default function About() {
       </section>
 
       {/* Section 3 - NITSNETS */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-900 to-black overflow-hidden">
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white overflow-hidden">
         {/* Left Text */}
         <div className="flex-1 z-10 space-y-6 max-w-2xl">
           <h2 className="text-4xl font-bold">NITSNETS TECHNOLOGY</h2>
@@ -92,7 +96,7 @@ export default function About() {
       </section>
 
       {/* Section 4 - Our Journey */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-950 to-black overflow-hidden">
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white overflow-hidden">
         {/* Left Shape */}
         <motion.div
           animate={controls}
@@ -125,6 +129,8 @@ export default function About() {
           </p>
         </div>
       </section>
+      </div>
+      <Footer />
     </>
   );
 }

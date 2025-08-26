@@ -139,7 +139,7 @@ export default function Hero() {
           className="relative w-[16rem] md:w-[28rem] lg:w-[32rem] h-auto"
         >
           <Image
-            src="/convos.webp" // replace with your glass bubbles asset
+            src="/convos.webp" 
             alt="3D chat bubbles"
             width={600}
             height={600}
