@@ -55,8 +55,9 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Social</h3>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-white">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/108663985/" className="hover:text-white">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/scraper_inc/" className="hover:text-white">Instagram</a></li>
+                <li><a href="https://x.com/Scraper_inc" className="hover:text-white">X/Twitter</a></li>
               </ul>
             </div>
             
