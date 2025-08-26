@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
 export default function About() {
   const { scrollY } = useScroll();
@@ -37,8 +39,9 @@ export default function About() {
 
   return (
     <>
-      {/* Section 1 - Collaborating with Genuine Brands */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 bg-gradient-to-b from-black via-purple-900 to-black text-white overflow-hidden">
+      <div className="gradient-background">
+        <Navbar />
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 text-white overflow-hidden">
         <div className="flex-1 max-w-2xl space-y-6 z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
             Collaborating with <span className="text-purple-200 font-bold">genuine brands</span> that <br />
@@ -61,9 +64,9 @@ export default function About() {
       </section>
 
       {/* Section 2 - Brand Evolution Studio */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 text-white bg-gradient-to-b from-black via-purple-950 to-black text-center overflow-hidden">
-        <div className="absolute -top-32 -left-32 w-[20rem] h-[20rem] bg-purple-600/30 rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 w-[20rem] h-[20rem] bg-pink-500/20 rounded-full blur-3xl" />
+      <section className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 text-white  text-center overflow-hidden">
+        <div className="absolute -top-32 -left-32 w-[20rem] h-[20rem]  rounded-full blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 w-[20rem] h-[20rem]  rounded-full blur-3xl" />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +75,7 @@ export default function About() {
           className="max-w-4xl space-y-6 z-10"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            We are a <span className="bg-gradient-to-r from-purple-300 via-pink-400 to-purple-200 text-transparent bg-clip-text">Brand Evolution Studio</span>
+            We are a <span className="text-transparent bg-clip-text">Brand Evolution Studio</span>
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-300">
             We partner <span className="font-semibold text-white">closely with our clients</span> to shape their vision into meaningful brand experiences <span className="font-serif italic">that connect, transform, and empower</span> their businesses across every touchpoint.
@@ -81,9 +84,9 @@ export default function About() {
       </section>
 
       {/* Section 3 - Other */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-900 to-black overflow-hidden">
-        <div className="absolute top-0 left-0 w-[15rem] h-[15rem] bg-purple-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-[18rem] h-[18rem] bg-pink-600/20 rounded-full blur-3xl" />
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white  overflow-hidden">
+        <div className="absolute top-0 left-0 w-[15rem] h-[15rem]  rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[18rem] h-[18rem]  rounded-full blur-3xl" />
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -110,7 +113,7 @@ export default function About() {
       </section>
 
       {/* Section 4 - Our Journey */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-950 to-black overflow-hidden">
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white overflow-hidden">
         <motion.div
           animate={controls}
           style={{ rotate }}
@@ -136,7 +139,7 @@ export default function About() {
       </section>
 
       {/* Section 5 - Meet the People */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-900 to-black overflow-hidden">
+      <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white  overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +161,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-b from-purple-950 to-black rounded-2xl p-6 shadow-lg max-w-sm text-center md:text-left"
+            className=" rounded-2xl p-6 shadow-lg max-w-sm text-center md:text-left"
           >
             <Image
               src={teamMembers[current].img}
@@ -193,6 +196,8 @@ export default function About() {
           </ul>
         </motion.div>
       </section>
+      </div>
+      <Footer />
     </>
   );
 }
