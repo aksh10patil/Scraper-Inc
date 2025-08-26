@@ -80,7 +80,7 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* Section 3 - NITSNETS */}
+      {/* Section 3 - Other */}
       <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 text-white bg-gradient-to-b from-black via-purple-900 to-black overflow-hidden">
         <div className="absolute top-0 left-0 w-[15rem] h-[15rem] bg-purple-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-[18rem] h-[18rem] bg-pink-600/20 rounded-full blur-3xl" />
