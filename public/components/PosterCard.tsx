@@ -5,9 +5,8 @@ import styled from "styled-components";
 
 // ✅ Dummy images (replace with real images or SVGs)
 const projectImages = [
-  "/landing_1.webp",
-    "/landing_2.webp",
-    "/landing_1.webp",
+  "/alpixn-mockup.webp",
+  "/beauty-mockup.webp",
 ];
 
 const Card = ({ currentImage }: { currentImage: string }) => {

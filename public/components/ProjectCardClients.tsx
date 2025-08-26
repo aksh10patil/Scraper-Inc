@@ -5,26 +5,38 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "PcComponentes",
-    subtitle: "Building something Big",
+    title: "Beauty At Home",
+    subtitle: "Beauty Saloon Services at your Doorstep",
     tags: [
       "Brand Strategy and activation",
       "Brand storytelling and Naming",
       "Visual Identity Design and Design Systems",
     ],
-    img: "/sample1.png", // replace with your image
+    img: "/beauty-mockup.webp", // replace with your image
     bg: "from-purple-900 to-indigo-900",
   },
   {
-    title: "Nuuma",
-    subtitle: "Innovating in genomics, improving lives",
+    title: "Alpixn",
+    subtitle: "Innovating in Tech, Providing easier solutions",
+    tags: [
+      "Tech Strategy and activation",
+      "Brand storytelling and Naming",
+      "Visual Identity Design and Tech Systems",
+      "Campaigns and content",
+    ],
+    img: "/alpixn-mockup.webp", // replace with your image
+    bg: "from-purple-800 to-pink-700",
+  },
+  {
+    title: "DocBridge",
+    subtitle: "Innovating in HealthCare, Saving lives",
     tags: [
       "Brand Strategy and activation",
       "Brand storytelling and Naming",
       "Visual Identity Design and Design Systems",
       "Campaigns and content",
     ],
-    img: "/sample2.png", // replace with your image
+    img: "/sample3.png", // replace with your image
     bg: "from-purple-800 to-pink-700",
   },
 ];
