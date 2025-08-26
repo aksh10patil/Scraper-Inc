@@ -34,7 +34,7 @@ const cards = [
     bg: "bg-gradient-to-br from-purple-600/70 via-pink-600/70 to-teal-600/70",
   },
   {
-    id: "id-6",
+    id: "id-",
     category: "Brand Evolution",
     title: "Brands don't evolve on autopilot: the Art of managing the inevitable",
     bg: "bg-gradient-to-br from-cyan-500/60 via-blue-900/70 to-purple-900/70",

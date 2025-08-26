@@ -39,46 +39,52 @@ export default function About() {
 
   return (
     <>
-    <Navbar />
-    <div className="gradient-background">
-      {/* Section 1 - Collaborating with Genuine Brands */}
+      <Navbar />
+      <div className="gradient-background">
 
-        <div className="flex-1 max-w-2xl space-y-6 z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-            Collaborating with <span className="text-purple-200 font-bold">genuine brands</span> that <br />
-            <span className="font-serif italic font-light">follow their own paths</span>
-          </h1>
-        </div>
-        <motion.div
-          animate={controls}
-          style={{ rotate }}
-          className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mt-10 md:mt-0"
-        >
-          <Image
-            src="/triangle.webp"
-            alt="3D Shape"
-            width={600}
-            height={600}
-            className="object-contain drop-shadow-[0_0_40px_rgba(180,140,255,0.7)]"
-          />
-        </motion.div>
-      </section>
+        {/* Section 1 - Collaborating with Genuine Brands */}
+        <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20">
+          <div className="flex-1 max-w-2xl space-y-6 z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+              Collaborating with{" "}
+              <span className="text-purple-200 font-bold">genuine brands</span>{" "}
+              that <br />
+              <span className="font-serif italic font-light">follow their own paths</span>
+            </h1>
+          </div>
+          <motion.div
+            animate={controls}
+            style={{ rotate }}
+            className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mt-10 md:mt-0"
+          >
+            <Image
+              src="/triangle.webp"
+              alt="3D Shape"
+              width={600}
+              height={600}
+              className="object-contain drop-shadow-[0_0_40px_rgba(180,140,255,0.7)]"
+            />
+          </motion.div>
+        </section>
 
-      {/* Section 2 - Brand Evolution Studio */}
-
-
-          </h2>
+        {/* Section 2 - Brand Evolution Studio */}
+        <section className="px-6 md:px-16 py-20 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6">Brand Evolution Studio</h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-            We partner <span className="font-semibold text-white">closely with our clients</span> to shape their vision into meaningful brand experiences <span className="font-serif italic">that connect, transform, and empower</span> their businesses across every touchpoint.
+            We partner{" "}
+            <span className="font-semibold text-white">closely with our clients</span>{" "}
+            to shape their vision into meaningful brand experiences{" "}
+            <span className="font-serif italic">that connect, transform, and empower</span>{" "}
+            their businesses across every touchpoint.
           </p>
-        </motion.div>
-      </section>
+        </section>
 
-      {/* Section 3 - NITSNETS */}
-
-          </p>
+        {/* Section 3 - NITSNETS */}
+        <section className="px-6 md:px-16 py-20 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6"> HI TEST</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
-            Together, we turn ideas into impactful solutions that inspire audiences and ensure every touchpoint feels <span className="italic">on-brand</span>.
+            Together, we turn ideas into impactful solutions that inspire audiences and
+            ensure every touchpoint feels <span className="italic">on-brand</span>.
           </p>
           <motion.a
             href="#"
@@ -88,35 +94,41 @@ export default function About() {
           >
             Visit the other website
           </motion.a>
-        </motion.div>
-      </section>
+        </section>
 
-      {/* Section 4 - Our Journey */}
+        {/* Section 4 - Our Journey */}
+        <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20">
+          <motion.div
+            animate={controls}
+            style={{ rotate }}
+            className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mb-10 md:mb-0"
+          >
+            <Image
+              src="/heart.webp"
+              alt="3D Heart"
+              width={600}
+              height={600}
+              className="object-contain drop-shadow-[0_0_40px_rgba(180,140,255,0.7)]"
+            />
+          </motion.div>
+          <div className="flex-1 z-10 max-w-2xl space-y-6">
+            <h2 className="text-4xl md:text-5xl font-semibold">
+              Our <span className="font-serif italic">journey</span>
+            </h2>
+            <p className="text-lg text-gray-200 leading-relaxed">
+              From the start, we believed that brands are made of purpose and direction, and that
+              idea is still with us over a decade later. Design is a way to collaborate in the right
+              direction and de-risk your business.
+            </p>
+            <p className="text-lg text-gray-200 leading-relaxed">
+              To us, winning people over is the core of a successful project. Solid relationships built
+              between brands and audiences.
+            </p>
+          </div>
+        </section>
 
-        <motion.div
-          animate={controls}
-          style={{ rotate }}
-          className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mb-10 md:mb-0"
-        >
-          <Image
-            src="/heart.webp"
-            alt="3D Heart"
-            width={600}
-            height={600}
-            className="object-contain drop-shadow-[0_0_40px_rgba(180,140,255,0.7)]"
-          />
-        </motion.div>
-        <div className="flex-1 z-10 max-w-2xl space-y-6">
-          <h2 className="text-4xl md:text-5xl font-semibold">Our <span className="font-serif italic">journey</span></h2>
-          <p className="text-lg text-gray-200 leading-relaxed">
-            From the start, we believed that brands are made of purpose and direction, and that idea is still with us over a decade later. Design is a way to collaborate in the right direction and de-risk your business.
-          </p>
-          <p className="text-lg text-gray-200 leading-relaxed">
-            To us, winning people over is the core of a successful project. Solid relationships built between brands and audiences.
-          </p>
-        </div>
-      </section>
-
+      </div>
+      <Footer />
     </>
   );
 }
