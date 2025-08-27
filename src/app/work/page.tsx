@@ -5,7 +5,7 @@ import Navbar from '../../../public/components/Navbar'
 import Footer from '../../../public/components/Footer'
 import ProjectCardClients from '../../../public/components/ProjectCardClients'
 
-const clients = () => {
+const work = () => {
 
 
   return (
@@ -41,7 +41,7 @@ const clients = () => {
               >
                 All success stories
               </a>
-            </section>
+              </section>
 
             <ProjectCardClients />
       <Footer />
@@ -56,4 +56,4 @@ const clients = () => {
   )
 }
 
-export default clients
+export default work

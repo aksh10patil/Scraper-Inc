@@ -5,26 +5,65 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "PcComponentes",
-    subtitle: "Building something Big",
+    title: "Beauty At Home",
+    subtitle: "Beauty Saloon Services at your Doorstep",
     tags: [
       "Brand Strategy and activation",
       "Brand storytelling and Naming",
       "Visual Identity Design and Design Systems",
     ],
-    img: "/sample1.png", // replace with your image
+    img: "/beauty-mockup.webp", // replace with your image
     bg: "from-purple-900 to-indigo-900",
   },
   {
-    title: "Nuuma",
-    subtitle: "Innovating in genomics, improving lives",
+    title: "Alpixn",
+    subtitle: "Innovating in Tech, Providing easier solutions",
     tags: [
-      "Brand Strategy and activation",
+      "Tech Strategy and activation",
       "Brand storytelling and Naming",
-      "Visual Identity Design and Design Systems",
+      "Visual Identity Design and Tech Systems",
       "Campaigns and content",
     ],
-    img: "/sample2.png", // replace with your image
+    img: "/alpixn-mockup.webp", // replace with your image
+    bg: "from-purple-800 to-pink-700",
+  },
+
+
+  {
+    title: "CabGurugram",
+    subtitle: "Serving Cabs since 2003, Gurugram and Beyond",
+    tags: [
+      "Brand Strategy and activation",
+      "Classic Business",
+      "Campaigns and content",
+    ],
+    img: "/cab-mockup.webp", // replace with your image
+    bg: "from-purple-800 to-pink-700",
+  },
+
+
+  {
+    title: "CrowhHub",
+    subtitle: "Helping you launch MVPs, Day and Night",
+    tags: [
+      "Fast Paced Business",
+      "Classic Business",
+      "Campaigns and content",
+    ],
+    img: "/crowhub-mockup.webp", // replace with your image
+    bg: "from-purple-900 to-indigo-900",
+  },
+
+
+  {
+    title: "Visual Values",
+    subtitle: "Digital Visuals, Sharing traditional Knowledge in modern ways",
+    tags: [
+      "Personal Branding",
+      "Modern Business",
+      "Campaigns and content",
+    ],
+    img: "/vv-mockup.webp", // replace with your image
     bg: "from-purple-800 to-pink-700",
   },
 ];
