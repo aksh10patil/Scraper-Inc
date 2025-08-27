@@ -27,16 +27,43 @@ const projects = [
     img: "/alpixn-mockup.webp", // replace with your image
     bg: "from-purple-800 to-pink-700",
   },
+
+
   {
-    title: "DocBridge",
-    subtitle: "Innovating in HealthCare, Saving lives",
+    title: "CabGurugram",
+    subtitle: "Serving Cabs since 2003, Gurugram and Beyond",
     tags: [
       "Brand Strategy and activation",
-      "Brand storytelling and Naming",
-      "Visual Identity Design and Design Systems",
+      "Classic Business",
       "Campaigns and content",
     ],
-    img: "/sample3.png", // replace with your image
+    img: "/cab-mockup.webp", // replace with your image
+    bg: "from-purple-800 to-pink-700",
+  },
+
+
+  {
+    title: "CrowhHub",
+    subtitle: "Helping you launch MVPs, Day and Night",
+    tags: [
+      "Fast Paced Business",
+      "Classic Business",
+      "Campaigns and content",
+    ],
+    img: "/crowhub-mockup.webp", // replace with your image
+    bg: "from-purple-900 to-indigo-900",
+  },
+
+
+  {
+    title: "Visual Values",
+    subtitle: "Digital Visuals, Sharing traditional Knowledge in modern ways",
+    tags: [
+      "Personal Branding",
+      "Modern Business",
+      "Campaigns and content",
+    ],
+    img: "/vv-mockup.webp", // replace with your image
     bg: "from-purple-800 to-pink-700",
   },
 ];

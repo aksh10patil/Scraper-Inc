@@ -45,11 +45,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative flex items-center justify-between px-6 py-4 bg-black">
-      {/* Logo */}
-      <div className="text-2xl font-extrabold tracking-wide text-white font-['Montserrat']">
-        Scraper
-      </div>
+    <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-black z-50">
+    {/* Logo */}
+          <a href="/" className="flex items-center space-x-2">
+        <img 
+          src="/Scraper-hq2.webp"   // replace with your logo path
+          alt="Scraper Logo" 
+          className="h-10 w-auto"
+        />
+        <span className="text-2xl font-extrabold tracking-wide text-white font-['Montserrat']">
+          Scraper
+        </span>
+      </a>
+
+  
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-8">

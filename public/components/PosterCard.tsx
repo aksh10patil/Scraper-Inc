@@ -3,10 +3,15 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-// ✅ Dummy images (replace with real images or SVGs)
+
 const projectImages = [
   "/alpixn-mockup.webp",
   "/beauty-mockup.webp",
+  "/crowhub-mockup.webp",
+  "/vv-mockup.webp",
+  "/cab-mockup.webp",
+
+
 ];
 
 const Card = ({ currentImage }: { currentImage: string }) => {
