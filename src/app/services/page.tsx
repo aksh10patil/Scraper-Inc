@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
 /* ------------------- Creative Glassmorphic Card ------------------- */
 interface CardProps {
@@ -98,6 +100,9 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
   };
 
   return (
+    <>
+
+    <Navbar  />
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -179,7 +184,11 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
       {/* Floating Elements */}
       <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-pulse"></div>
       <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-white/15 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+    
     </motion.div>
+    
+    </>
+    
   );
 };
 
@@ -449,6 +458,7 @@ export default function Service() {
           visual="heart"
         />
       </main>
+      <Footer />
     </div>
   );
 }
