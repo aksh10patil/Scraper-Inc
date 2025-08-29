@@ -100,9 +100,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
   };
 
   return (
-    <>
-
-    <Navbar  />
+    
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -187,7 +185,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
     
     </motion.div>
     
-    </>
+   
     
   );
 };
@@ -343,6 +341,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 /* ------------------- Main Page ------------------- */
 export default function Service() {
   return (
+    <>
+
+    <Navbar  />
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
       
       {/* Global Background Elements */}
@@ -460,5 +461,7 @@ export default function Service() {
       </main>
       <Footer />
     </div>
+    </>
+    
   );
 }
