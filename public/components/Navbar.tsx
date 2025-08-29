@@ -54,7 +54,7 @@ export default function Navbar() {
           className="h-10 w-auto"
         />
         <span className="text-2xl font-extrabold tracking-wide text-white font-['Montserrat']">
-          Scraper
+          Scraperr
         </span>
       </a>
 

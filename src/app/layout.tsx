@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Cursor from "../../public/components/Cursor"; 
+import { BackgroundGradientAnimation } from "../../public/components/GradientAnimation"; // 👈 import it
 
 // Fonts
 const montserrat = Montserrat({
@@ -23,7 +24,7 @@ const geistMono = Geist_Mono({
 
 // Metadata (server-side only)
 export const metadata: Metadata = {
-  title: "Scraper Inc",
+  title: "Scraperr Inc",
   description: "Developing Scalable Solutions Globally",
 };
 
@@ -34,13 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased 
-          min-h-screen 
-          bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-          from-purple-700 via-purple-900 to-black`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased min-h-screen`}
       >
-        {children}
-        <Cursor /> {/* 👈 Glowing cursor injected here */}
+        {/* Background stays fixed for all pages */}
+      
+
+        {/* Foreground content */}
+        <div className="relative z-10">
+          {children}
+          <Cursor /> 
+        </div>
       </body>
     </html>
   );
