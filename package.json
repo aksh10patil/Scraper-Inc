@@ -19,6 +19,10 @@
     "nodemailer": "^7.0.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+<<<<<<< HEAD
+=======
+    "react-icons": "^5.5.0",
+>>>>>>> 3cbe0ce492f79c66ecfec3dcfc6f650206d28a9c
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.3.1"
   },
