@@ -4,6 +4,9 @@ import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import Image from "next/image";
 import { PointerHighlight } from "../../public/components/PointerHighlight";
+import { FlipWords } from "./FlipWords";
+import Link from "next/link";
+import Button from "./Button";
 
 export default function Hero() {
   //const { scrollY } = useScroll();
@@ -34,25 +37,43 @@ export default function Hero() {
       <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden  text-white px-6">
         {/* Text */}
 
-                  <div className="z-10 max-w-4xl text-center">
-
-            <p className="text-lg font-light">Next-gen brands</p>
-            <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight">
-              The future belongs to <br />
-              <PointerHighlight
-  rectangleClassName="bg-transparent border border-orange-400 dark:border-orange-500 leading-loose"
-  pointerClassName="text-orange-400 h-3 w-3"
-  containerClassName="inline-block ml-1"
->
-  <span className="relative z-10 font-serif italic text-gray-200">
-    world-defining brands
+             <div className="z-10 max-w-4xl text-center">
+                    <p className="text-lg font-light">Next-gen brands</p>
+                    <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight">
+                      The future belongs to <br />
+                      <PointerHighlight
+            rectangleClassName="bg-transparent border border-yellow-400 dark:border-yellow-500 leading-loose drop-shadow-[0_0_6px_#facc15]"
+            pointerClassName="text-yellow-400 h-3 w-3 drop-shadow-[0_0_6px_#facc15]"
+            containerClassName="inline-block ml-1"
+          >
+            <span className="relative z-10 font-serif italic text-gray-200">
+              world-defining brands
   </span>
 </PointerHighlight>
 
 
-
             </h1>
+               <FlipWords
+                    words={[
+                      "Website Development",
+                      "Data Analysis",
+                      "AI First Features",
+                    ]}
+                    duration={2000} // optional, defaults to 3000ms
+                    className="text-3xl font-bold mt-8"
+              />
+ 
           </div>
+        
+          <div className="mt-8">
+          <Link href="/contact">
+          <Button />
+          </Link>
+
+                 
+
+</div>
+
 
 
         {/* Floating bubble 2 */}

@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 import Navbar from "../../../public/components/Navbar";
 import Footer from "../../../public/components/Footer";
 import CardsSection from "../../../public/components/CardSection";
-import { TextHoverEffect } from "../../../public/components/TextHoverEffect";
+
 
 export default function Insights() {
   return (
