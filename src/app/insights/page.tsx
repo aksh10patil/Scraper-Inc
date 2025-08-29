@@ -5,6 +5,7 @@ import { Star } from "lucide-react";
 import Navbar from "../../../public/components/Navbar";
 import Footer from "../../../public/components/Footer";
 import CardsSection from "../../../public/components/CardSection";
+import { TextHoverEffect } from "../../../public/components/TextHoverEffect";
 
 export default function Insights() {
   return (
@@ -17,20 +18,18 @@ export default function Insights() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
         <div className="space-y-6">
-          <p className="text-white/80 text-lg font-medium">Scraper Insights*</p>
+          <p className="text-white/80 text-lg font-medium">Scraperr Insights*</p>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
-            Scraper*: thinking big, <br />
-            <span className="text-blue-300">starting Scraper</span>
+            Scraperr: thinking big, <br />
+            <span className="text-blue-300">starting Scraperr</span>
           </h1>
 
-          <p className="text-gray-200 text-lg leading-relaxed">
-            Scraper* was born in 2010 with a simple but strong belief: to help brands
-            become what they’re truly meant to be. Visual Design wasn’t enough.
-            We had to think bigger and better. From day one, our focus has been
-            on building brands with strategic direction, coherent identity, and
-            real capabilities to make an impact.
-          </p>
+                <p className="text-gray-200 text-lg leading-relaxed">
+        Scraperr was built on a simple idea: brands shouldn’t just exist — they should 
+        spark energy, inspire action, and feel alive.
+      </p>
+
 
           <button className="px-6 py-3 rounded-full bg-pink-600 text-white font-medium hover:bg-pink-700 transition">
             Continue reading

@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import Image from "next/image";
-import HeroFloating from "./HeroFloating";
+import { PointerHighlight } from "../../public/components/PointerHighlight";
 
 export default function Hero() {
   //const { scrollY } = useScroll();
@@ -34,18 +34,26 @@ export default function Hero() {
       <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden  text-white px-6">
         {/* Text */}
 
-        <div className="z-10 max-w-4xl text-center">
-          <p className="text-lg font-light">Next-gen brands</p>
-          <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight">
-            The future belongs to <br />
-            <span className="font-serif italic text-gray-200">
-              world-defining brands
-            </span>
-          </h1>
-          
+                  <div className="z-10 max-w-4xl text-center">
 
-         
-        </div>
+            <p className="text-lg font-light">Next-gen brands</p>
+            <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight">
+              The future belongs to <br />
+              <PointerHighlight
+  rectangleClassName="bg-transparent border border-orange-400 dark:border-orange-500 leading-loose"
+  pointerClassName="text-orange-400 h-3 w-3"
+  containerClassName="inline-block ml-1"
+>
+  <span className="relative z-10 font-serif italic text-gray-200">
+    world-defining brands
+  </span>
+</PointerHighlight>
+
+
+
+            </h1>
+          </div>
+
 
         {/* Floating bubble 2 */}
                 <motion.div
@@ -63,7 +71,7 @@ export default function Hero() {
           />
         </motion.div>
         <div className="flex items-center justify-center mt-10">
-            <HeroFloating />
+
           </div>
 
             </section>
@@ -149,13 +157,13 @@ export default function Hero() {
             opacity: { duration: 0.6, ease: "easeOut" },  // quick fade in
             y: { duration: 2, repeat: Infinity, ease: "easeInOut" }, // smooth floating
           }}
-          className="relative w-[16rem] md:w-[28rem] lg:w-[32rem] h-auto"
+          className="relative w-[16rem] md:w-[28rem] lg:w-[32rem] sm:w-[10rem] h-auto"
         >
           <Image
             src="/convos.webp" 
             alt="3D chat bubbles"
-            width={600}
-            height={600}
+            width={300}
+            height={300}
             className="object-contain drop-shadow-[0_0_25px_rgba(180,140,255,0.7)]"
           />
         </motion.div>

@@ -3,9 +3,10 @@
 import FeatureCard from "../../public/components/FeatureCard";
 import Footer from "../../public/components/Footer";
 import Hero from "../../public/components/Hero";
-import HeroFloating from "../../public/components/HeroFloating";
+
 import Navbar from "../../public/components/Navbar";
 import PosterCard from "../../public/components/PosterCard";
+
 
 
 

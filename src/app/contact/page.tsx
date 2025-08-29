@@ -57,7 +57,7 @@ const Page = () => {
             <span>get in touch with</span>
           </div>
           <div className="title-2">
-            <span>SCRAPER</span>
+            <span>Scraperr</span>
           </div>
           
           <section className="bg-stars">
