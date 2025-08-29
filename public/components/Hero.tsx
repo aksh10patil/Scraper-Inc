@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, useAnimation, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import HeroFloating from "./HeroFloating";
 
 // Cycle data
 const cycleWords = ["Think.", "Create.", "Change."];
@@ -13,7 +14,7 @@ const cycleMessages = [
 ];
 
 export default function Hero() {
-  const { scrollY } = useScroll();
+  //const { scrollY } = useScroll();
 
   // floating anims
   const controls1 = useAnimation();
@@ -41,13 +42,14 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [controls1, controls2]);
 
-  const rotate = useTransform(scrollY, [0, 1000], [0, 100]);
+
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden text-white px-6">
         {/* Text */}
+
         <div className="z-10 max-w-4xl text-center">
           <p className="text-lg font-light">Next-gen brands</p>
           <h1 className="mt-4 text-5xl md:text-6xl font-bold leading-tight">
@@ -56,17 +58,20 @@ export default function Hero() {
               world-defining brands
             </span>
           </h1>
+          
+
+         
         </div>
 
         {/* Floating bubble */}
         <motion.div
           animate={controls2}
-          style={{ rotate }}
-          className="absolute left-1/2 -translate-x-1/2 top-40 w-[15rem] h-[15rem] pointer-events-none"
+
         >
           <Image
             src="/bubble.webp"
             alt="3D spiral"
+
             width={600}
             height={600}
             className="object-contain drop-shadow-[0_0_25px_rgba(180,140,255,0.7)]"

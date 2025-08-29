@@ -31,6 +31,7 @@ const PosterCard = () => {
   }, []);
 
   return (
+    <>
     <div className="min-h-screen gradient-background flex">
       {/* Left Content */}
       <div className="flex-1 flex items-center justify-start pl-16">
@@ -48,10 +49,12 @@ const PosterCard = () => {
       </div>
 
       {/* Right Project Card */}
-      <div className="flex-1 flex items-center justify-end pr-0">
-        <Card currentImage={projectImages[current]} />
-      </div>
+
     </div>
+        <div className="flex-1 flex items-center justify-center md:justify-end pr-0 mt-10 md:mt-0">
+        <Card currentImage={projectImages[current]} />
+            </div>
+        </>
   );
 };
 
