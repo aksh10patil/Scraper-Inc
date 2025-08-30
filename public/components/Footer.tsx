@@ -12,7 +12,7 @@ export default function Footer() {
             Helping brands
           </h2>
           <p className="text-xl md:text-3xl text-gray-300 font-light mt-2">
-            define their future, and that <br className="hidden sm:block" /> of
+            Define their future, and that <br className="hidden sm:block" /> of
             the world around them.
           </p>
         </div>
@@ -41,12 +41,11 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-white">About us</a></li>
-              <li><a href="#" className="hover:text-white">What we do</a></li>
-              <li><a href="#" className="hover:text-white">Projects</a></li>
-              <li><a href="#" className="hover:text-white">Insights</a></li>
-              <li><a href="#" className="hover:text-white">Careers</a></li>
-              <li><a href="#" className="hover:text-white">Contact</a></li>
+              <li><a href="/about" className="hover:text-white">About us</a></li>
+              <li><a href="/services" className="hover:text-white">What we do</a></li>
+              <li><a href="/work" className="hover:text-white">Projects</a></li>
+              <li><a href="/insights" className="hover:text-white">Insights</a></li>
+              <li><a href="/contact" className="hover:text-white">Contact</a></li>
             </ul>
           </div>
 

@@ -27,15 +27,42 @@ const Page = () => {
   };
 
   // ✅ Strongly type the form submit event
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+  
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await res.json();
+  
+      if (!res.ok) {
+        alert(data.error || "Something went wrong.");
+        return;
+      }
+  
+      alert("✅ Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        acceptData: false,
+      });
+    } catch (err) {
+      console.error("Submit error:", err);
+      alert("❌ Failed to send message.");
+    }
   };
+  
 
   return (
     <>
     <Navbar />
-    <div className="min-h-screen flex items-center justify-center p-4 gradient-background">
+    <div className="min-h-screen mt-16 flex items-center justify-center p-4 gradient-background">
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
         {/* Left side - Text content */}
         <div className="text-white space-y-6">
@@ -44,10 +71,9 @@ const Page = () => {
             hear from <span className="text-pink-300">you!</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-            We love what we do, and even more to do it from Alicante. 
-            Although we work in a hybrid way, our offices in Alicante and 
-            Madrid are open to you. Use us as an excuse to visit and discover 
-            why the iconic is created here, surrounded by the Mediterranean.
+          We’ve embraced being a hybrid-first company from the start. By saving on traditional office overhead, we invest more into building solutions that matter and delivering them efficiently. 
+          Wherever you are, our team is ready to 
+          collaborate seamlessly and create impact together.
           </p>
         </div>
 
@@ -68,24 +94,26 @@ const Page = () => {
           </section>
 
           <div className="input-container">
-            <input 
-              placeholder="Name*" 
+            <input
+              placeholder="Name" 
               type="text" 
               name="name"
               value={formData.name}
               onChange={handleInputChange}
               required
+              className="placeholder-black"
             />
           </div>
 
           <div className="input-container">
             <input 
-              placeholder="Email*" 
+              placeholder="Email" 
               type="email" 
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               required
+              className="placeholder-black"
             />
           </div>
 
@@ -96,17 +124,19 @@ const Page = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
+              className="placeholder-black"
             />
           </div>
 
           <div className="input-container">
             <textarea 
-              placeholder="Message*" 
+              placeholder="Message" 
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
               required
+                className="placeholder-black"
             ></textarea>
           </div>
 
@@ -117,13 +147,14 @@ const Page = () => {
               checked={formData.acceptData}
               onChange={handleInputChange}
               id="acceptData"
+              className="placeholder-black"
             />
             <label htmlFor="acceptData">
               I have read and accept the <a href="#" className="data-link">data protection law</a>
             </label>
           </div>
 
-        
+       
 
           <button className="submit" type="submit">
             <span className="sign-text">Submit</span>

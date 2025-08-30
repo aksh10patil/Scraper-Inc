@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Cursor from "../../public/components/Cursor"; 
-import { BackgroundGradientAnimation } from "../../public/components/GradientAnimation"; // 👈 import it
+
 
 // Fonts
 const montserrat = Montserrat({

@@ -198,7 +198,7 @@ const Bubble = () => (
     className="relative"
   >
     <Image
-      src="/bubble.webp"
+      src="/data.webp"
       alt="3D bubble"
       width={400}
       height={400}
@@ -235,7 +235,46 @@ const Heart = () => (
     className="relative"
   >
     <Image
-      src="/heart.webp"
+      src="/bulb.webp"
+      alt="bulb"
+      width={400}
+      height={400}
+      className="drop-shadow-[0_25px_50px_rgba(236,72,153,0.4)] filter saturate-110"
+    />
+    {/* Floating hearts */}
+    {[...Array(3)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute text-pink-400/60 text-lg"
+        animate={{
+          y: [0, -30, 0],
+          opacity: [0.4, 1, 0.4],
+          scale: [0.8, 1.2, 0.8]
+        }}
+        transition={{
+          duration: 3 + i * 0.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        style={{
+          top: `${40 + i * 10}%`,
+          left: `${25 + i * 20}%`,
+        }}
+      >
+        .
+      </motion.div>
+    ))}
+  </motion.div>
+);
+
+const Brain = () => (
+  <motion.div
+    whileHover={{ scale: 1.05, rotateY: -15 }}
+    transition={{ duration: 0.5 }}
+    className="relative"
+  >
+    <Image
+      src="/brain.webp"
       alt="3D heart"
       width={400}
       height={400}
@@ -261,7 +300,7 @@ const Heart = () => (
           left: `${25 + i * 20}%`,
         }}
       >
-        ♥
+        .
       </motion.div>
     ))}
   </motion.div>
@@ -332,7 +371,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        {visual === "bubble" ? <Bubble /> : <Heart />}
+        {visual === "bubble" ? <Bubble /> : visual === "heart" ? <Heart /> : <Brain />}
       </motion.div>
     </section>
   );
@@ -342,8 +381,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 export default function Service() {
   return (
     <>
-
-    <Navbar  />
+    <Navbar />
+    
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
       
       {/* Global Background Elements */}
@@ -456,12 +495,13 @@ export default function Service() {
               description: "Bespoke artificial intelligence solutions tailored to your specific business requirements and goals.",
             },
           ]}
-          visual="heart"
+          visual="brain"
         />
       </main>
       <Footer />
     </div>
+
+    <Footer />
     </>
-    
   );
 }

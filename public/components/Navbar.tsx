@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { name: "Services", href: "/services" },
@@ -46,19 +47,17 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-black z-50">
-    {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-        <img 
-          src="/Scraper-hq2.webp"   // replace with your logo path
-          alt="Scraper Logo" 
+      {/* Logo */}
+      <a href="/" className="flex items-center space-x-2">
+        <img
+          src="/Scraper-hq2.webp" // replace with your logo path
+          alt="Scraper Logo"
           className="h-10 w-auto"
         />
         <span className="text-2xl font-extrabold tracking-wide text-white font-['Montserrat']">
           Scraperr
         </span>
       </a>
-
-  
 
       {/* Desktop Links */}
       <div className="hidden md:flex space-x-8">
@@ -81,21 +80,29 @@ export default function Navbar() {
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
-      {/* Mobile Dropdown */}
-      {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center space-y-6 py-6 md:hidden z-50">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.href}
-              href={item.href}
-              label={item.name}
-              active={pathname === item.href}
-              onClick={() => setIsOpen(false)}
-              className="text-white text-lg"
-            />
-          ))}
-        </div>
-      )}
+      {/* Mobile Dropdown with Animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -20, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute top-16 left-0 w-full bg-black flex flex-col items-center space-y-6 py-6 md:hidden z-50"
+          >
+            {navItems.map((item) => (
+              <NavLink
+                key={item.href}
+                href={item.href}
+                label={item.name}
+                active={pathname === item.href}
+                onClick={() => setIsOpen(false)}
+                className="text-white text-lg"
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
