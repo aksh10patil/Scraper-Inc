@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
 /* ------------------- Creative Glassmorphic Card ------------------- */
 interface CardProps {
@@ -98,6 +100,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
   };
 
   return (
+    
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -334,6 +337,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 /* ------------------- Main Page ------------------- */
 export default function Service() {
   return (
+    <>
+    <Navbar />
+    
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
       
       {/* Global Background Elements */}
@@ -450,5 +456,8 @@ export default function Service() {
         />
       </main>
     </div>
+
+    <Footer />
+    </>
   );
 }

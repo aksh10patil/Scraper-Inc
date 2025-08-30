@@ -94,24 +94,26 @@ const Page = () => {
           </section>
 
           <div className="input-container">
-            <input 
-              placeholder="Name*" 
+            <input
+              placeholder="Name" 
               type="text" 
               name="name"
               value={formData.name}
               onChange={handleInputChange}
               required
+              className="placeholder-black"
             />
           </div>
 
           <div className="input-container">
             <input 
-              placeholder="Email*" 
+              placeholder="Email" 
               type="email" 
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               required
+              className="placeholder-black"
             />
           </div>
 
@@ -122,17 +124,19 @@ const Page = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
+              className="placeholder-black"
             />
           </div>
 
           <div className="input-container">
             <textarea 
-              placeholder="Message*" 
+              placeholder="Message" 
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
               required
+                className="placeholder-black"
             ></textarea>
           </div>
 
@@ -143,18 +147,14 @@ const Page = () => {
               checked={formData.acceptData}
               onChange={handleInputChange}
               id="acceptData"
+              className="placeholder-black"
             />
             <label htmlFor="acceptData">
               I have read and accept the <a href="#" className="data-link">data protection law</a>
             </label>
           </div>
 
-          <div className="attach-files">
-            <svg className="attach-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-            </svg>
-            Attach files
-          </div>
+       
 
           <button className="submit" type="submit">
             <span className="sign-text">Submit</span>

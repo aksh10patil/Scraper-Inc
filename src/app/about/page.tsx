@@ -18,8 +18,10 @@ export default function About() {
 
   return (
     <>
-      <div className="gradient-background text-white">
+
         <Navbar />
+      <div className="gradient-background text-white">
+       
 
         {/* Section 1 - Hero */}
         <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 overflow-hidden">
