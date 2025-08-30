@@ -231,7 +231,7 @@ const Heart = () => (
     className="relative"
   >
     <Image
-      src="/bulb.webp"
+      src="/brain.webp"
       alt="3D heart"
       width={400}
       height={400}
