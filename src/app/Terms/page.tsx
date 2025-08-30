@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <>
     <Navbar />
-    <div className="min-h-screen bg-[#070812] text-gray-200 px-9 py-20">
+    <div className="min-h-screen bg-[#070812] text-gray-200 px- py-20">
       <div className="max-w-3xl mx-auto">
         {/* Title */}
         <header className="text-center mb-8">
@@ -162,13 +162,7 @@ export default function TermsPage() {
 }
 
 /* Section subcomponent (keeps markup tidy) */
-type SectionProps = {
-  number: string;
-  title: string;
-  children: React.ReactNode;
-};
-
-function Section({ number, title, children }: SectionProps) {
+function Section({ number, title, children }) {
   return (
     <>
     <section className="relative">
