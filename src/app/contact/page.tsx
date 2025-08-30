@@ -71,10 +71,9 @@ const Page = () => {
             hear from <span className="text-pink-300">you!</span>
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-            We love what we do, and even more to do it from Alicante. 
-            Although we work in a hybrid way, our offices in Alicante and 
-            Madrid are open to you. Use us as an excuse to visit and discover 
-            why the iconic is created here, surrounded by the Mediterranean.
+          We’ve embraced being a hybrid-first company from the start. By saving on traditional office overhead, we invest more into building solutions that matter and delivering them efficiently. 
+          Wherever you are, our team is ready to 
+          collaborate seamlessly and create impact together.
           </p>
         </div>
 
