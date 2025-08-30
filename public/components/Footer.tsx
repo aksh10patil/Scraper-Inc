@@ -54,6 +54,7 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Social</h3>
               <ul className="space-y-2 text-gray-300">
+
                 <li><a href="https://www.linkedin.com/company/scraperinc" className="hover:text-white">LinkedIn</a></li>
                 <li><a href="https://x.com/Scraper_inc" className="hover:text-white">X / Twitter</a></li>
                 <li>
@@ -66,6 +67,7 @@ export default function Footer() {
                   Instagram
                 </a>
             </li>
+
               </ul>
             </div>
             
