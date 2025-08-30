@@ -27,15 +27,42 @@ const Page = () => {
   };
 
   // ✅ Strongly type the form submit event
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+  
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await res.json();
+  
+      if (!res.ok) {
+        alert(data.error || "Something went wrong.");
+        return;
+      }
+  
+      alert("✅ Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        acceptData: false,
+      });
+    } catch (err) {
+      console.error("Submit error:", err);
+      alert("❌ Failed to send message.");
+    }
   };
+  
 
   return (
     <>
     <Navbar />
-    <div className="min-h-screen flex items-center justify-center p-4 gradient-background">
+    <div className="min-h-screen mt-16 flex items-center justify-center p-4 gradient-background">
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-8 items-center">
         {/* Left side - Text content */}
         <div className="text-white space-y-6">
