@@ -4,6 +4,14 @@ import React from 'react'
 import Navbar from '../../../public/components/Navbar'
 import Footer from '../../../public/components/Footer'
 import ProjectCardClients from '../../../public/components/ProjectCardClients'
+import { FocusCards } from '../../../public/components/FocusCards'
+
+const myCards = [
+  { title: "Project 1", src: "/lulu-lemon.webp" },
+  { title: "Project 2", src: "/mockup-guy.webp" },
+  { title: "Project 3", src: "/nutrient-mockup.webp" },
+  { title: "Project 4", src: "/rest-mockup.webp" },
+];
 
 const work = () => {
 
@@ -42,6 +50,11 @@ const work = () => {
                 All success stories
               </a>
               </section>
+              <FocusCards cards={myCards}  />
+
+
+                      
+
 
             <ProjectCardClients />
       <Footer />

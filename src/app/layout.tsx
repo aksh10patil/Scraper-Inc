@@ -26,6 +26,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Scraperr Inc",
   description: "Developing Scalable Solutions Globally",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 // Root Layout
