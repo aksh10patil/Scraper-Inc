@@ -162,7 +162,13 @@ export default function TermsPage() {
 }
 
 /* Section subcomponent (keeps markup tidy) */
-function Section({ number, title, children }) {
+type SectionProps = {
+  number: string;
+  title: string;
+  children: React.ReactNode;
+};
+
+function Section({ number, title, children }: SectionProps) {
   return (
     <>
     <section className="relative">
