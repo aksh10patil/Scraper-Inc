@@ -310,7 +310,7 @@ const Brain = () => (
 interface ServiceSectionProps {
   title: string;
   services: { title: string; description: string }[];
-  visual: "bubble" | "heart";
+  visual: "bubble" | "heart" | "brain";
   reverse?: boolean;
 }
 
@@ -498,7 +498,6 @@ export default function Service() {
           visual="brain"
         />
       </main>
-      <Footer />
     </div>
 
     <Footer />
