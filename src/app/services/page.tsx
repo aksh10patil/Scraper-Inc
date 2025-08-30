@@ -191,7 +191,7 @@ const Bubble = () => (
     className="relative"
   >
     <Image
-      src="/bubble.webp"
+      src="/data.webp"
       alt="3D bubble"
       width={400}
       height={400}
@@ -228,7 +228,7 @@ const Heart = () => (
     className="relative"
   >
     <Image
-      src="/heart.webp"
+      src="/bulb.webp"
       alt="3D heart"
       width={400}
       height={400}
@@ -254,7 +254,7 @@ const Heart = () => (
           left: `${25 + i * 20}%`,
         }}
       >
-        ♥
+        .
       </motion.div>
     ))}
   </motion.div>
