@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
 /* ------------------- Creative Glassmorphic Card ------------------- */
 interface CardProps {
@@ -21,7 +23,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
       accentColor: "bg-purple-400",
     },
     {
-      gradient: "from-blue-500/30 via-cyan-500/20 to-teal-500/30", 
+      gradient: "from-blue-500/30 via-cyan-500/20 to-teal-500/30",
       glowColor: "shadow-blue-500/50",
       borderGlow: "border-blue-400/50",
       iconBg: "from-blue-500/20 to-cyan-500/20",
@@ -29,7 +31,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
     },
     {
       gradient: "from-pink-500/30 via-rose-500/20 to-orange-500/30",
-      glowColor: "shadow-pink-500/50", 
+      glowColor: "shadow-pink-500/50",
       borderGlow: "border-pink-400/50",
       iconBg: "from-pink-500/20 to-rose-500/20",
       accentColor: "bg-pink-400",
@@ -37,7 +39,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
     {
       gradient: "from-emerald-500/30 via-green-500/20 to-cyan-500/30",
       glowColor: "shadow-emerald-500/50",
-      borderGlow: "border-emerald-400/50", 
+      borderGlow: "border-emerald-400/50",
       iconBg: "from-emerald-500/20 to-green-500/20",
       accentColor: "bg-emerald-400",
     },
@@ -101,15 +103,15 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      whileHover={{ 
-        y: -20, 
+      whileHover={{
+        y: -20,
         scale: 1.02,
         rotateX: 5,
         rotateY: 5,
       }}
       whileTap={{ scale: 0.95 }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
         delay: index * 0.15
       }}
@@ -118,7 +120,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
     >
       {/* Main Card */}
       <div className={`relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br ${variant.gradient} border border-white/20 ${variant.borderGlow} hover:border-white/40 transition-all duration-500 hover:${variant.glowColor} shadow-2xl`}>
-        
+
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 opacity-30 group-hover:opacity-60 transition-opacity duration-700">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform duration-700"></div>
@@ -127,12 +129,12 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
 
         {/* Content Container */}
         <div className="relative p-8 h-full flex flex-col">
-          
+
           {/* Floating Icon */}
-          <motion.div 
+          <motion.div
             className={`relative w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br ${variant.iconBg} backdrop-blur-sm border border-white/30 text-white`}
-            whileHover={{ 
-              rotate: 10, 
+            whileHover={{
+              rotate: 10,
               scale: 1.1,
               boxShadow: "0 20px 40px rgba(255,255,255,0.1)"
             }}
@@ -146,13 +148,13 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
           </motion.div>
 
           {/* Title */}
-          <motion.h3 
+          <motion.h3
             className="text-2xl font-bold text-white mb-4 text-center group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:via-gray-100 group-hover:to-white transition-all duration-500"
             whileHover={{ scale: 1.05 }}
           >
             {title}
           </motion.h3>
-          
+
           {/* Description */}
           <p className="text-gray-200 group-hover:text-white leading-relaxed transition-colors duration-300 text-center flex-1 text-sm lg:text-base">
             {description}
@@ -160,7 +162,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
 
           {/* Bottom accent */}
           <div className="mt-6 flex justify-center">
-            <motion.div 
+            <motion.div
               className={`h-1 ${variant.accentColor} rounded-full transition-all duration-500 group-hover:h-1.5`}
               initial={{ width: "20%" }}
               whileInView={{ width: "60%" }}
@@ -276,7 +278,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 }) => {
   return (
     <section className={`relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 xl:px-20 py-20 gap-16 ${reverse ? "lg:flex-row-reverse" : ""}`}>
-      
+
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className={`absolute ${reverse ? 'top-1/4 right-1/4' : 'top-1/3 left-1/4'} w-72 h-72 bg-gradient-to-r from-purple-600/5 to-pink-600/5 rounded-full blur-3xl`}></div>
@@ -334,121 +336,125 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 /* ------------------- Main Page ------------------- */
 export default function Service() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
-      
-      {/* Global Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/3 to-purple-600/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-      </div>
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
+        <Navbar />
 
-      <main className="relative z-10">
-        {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-8 text-center relative">
-          
-          <motion.div
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative z-10"
-          >
-            <h1 className="text-6xl md:text-7xl xl:text-8xl font-light text-white leading-tight">
-              Smart Digital{" "}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent font-semibold">
-                Services
-              </span>
-            </h1>
-            
-            <motion.p 
-              className="mt-8 text-xl md:text-2xl xl:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 50 }}
+        {/* Global Background Elements */}
+        <div className="fixed inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/3 to-purple-600/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
+
+        <main className="relative z-10">
+          {/* Hero Section */}
+          <section className="min-h-screen flex flex-col items-center justify-center px-8 text-center relative">
+
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="relative z-10"
             >
-              Websites, Data Analytics & AI Solutions — built for performance and scale.
-            </motion.p>
-          </motion.div>
+              <h1 className="text-6xl md:text-7xl xl:text-8xl font-light text-white leading-tight">
+                Smart Digital{" "}
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent font-semibold">
+                  Services
+                </span>
+              </h1>
 
-          {/* Scroll Indicator */}
-          <motion.div 
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
-            </div>
-          </motion.div>
-        </section>
+              <motion.p
+                className="mt-8 text-xl md:text-2xl xl:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+              >
+                Websites, Data Analytics & AI Solutions — built for performance and scale.
+              </motion.p>
+            </motion.div>
 
-        {/* Service Sections */}
-        <ServiceSection
-          title="Web Solutions"
-          services={[
-            {
-              title: "Modern Websites",
-              description: "Responsive, SEO-friendly, and designed for speed with cutting-edge technologies and frameworks.",
-            },
-            {
-              title: "Clean UI/UX",
-              description: "Minimal, intuitive interfaces that engage users and drive conversions with modern design principles.",
-            },
-            {
-              title: "SEO Optimization",
-              description: "Boost visibility and drive organic traffic with proven optimization strategies and best practices.",
-            },
-            {
-              title: "Admin Dashboards",
-              description: "Custom dashboards for businesses with real-time analytics, data visualization, and management tools.",
-            },
-          ]}
-          visual="heart"
-        />
+            {/* Scroll Indicator */}
+            <motion.div
+              className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
+              </div>
+            </motion.div>
+          </section>
 
-        <ServiceSection
-          title="Data & Insights"
-          services={[
-            {
-              title: "Market Analysis",
-              description: "Identify trends and opportunities with advanced data science techniques and market intelligence.",
-            },
-            {
-              title: "Demand Forecasting",
-              description: "Predict sales patterns using sophisticated machine learning algorithms and predictive modeling.",
-            },
-            {
-              title: "Business Analytics",
-              description: "Transform raw data into actionable insights for strategic decision-making and growth optimization.",
-            },
-          ]}
-          visual="bubble"
-          reverse
-        />
+          {/* Service Sections */}
+          <ServiceSection
+            title="Web Solutions"
+            services={[
+              {
+                title: "Modern Websites",
+                description: "Responsive, SEO-friendly, and designed for speed with cutting-edge technologies and frameworks.",
+              },
+              {
+                title: "Clean UI/UX",
+                description: "Minimal, intuitive interfaces that engage users and drive conversions with modern design principles.",
+              },
+              {
+                title: "SEO Optimization",
+                description: "Boost visibility and drive organic traffic with proven optimization strategies and best practices.",
+              },
+              {
+                title: "Admin Dashboards",
+                description: "Custom dashboards for businesses with real-time analytics, data visualization, and management tools.",
+              },
+            ]}
+            visual="heart"
+          />
 
-        <ServiceSection
-          title="AI-Powered Services"
-          services={[
-            {
-              title: "AI Agents",
-              description: "Intelligent automation systems that streamline workflows and enhance operational efficiency.",
-            },
-            {
-              title: "AI-first Advertising",
-              description: "Data-driven ad campaigns optimized with machine learning for maximum ROI and audience engagement.",
-            },
-            {
-              title: "Voice Support",
-              description: "Natural language processing systems for 24/7 customer support and interactive voice assistance.",
-            },
-            {
-              title: "Custom AI Features",
-              description: "Bespoke artificial intelligence solutions tailored to your specific business requirements and goals.",
-            },
-          ]}
-          visual="heart"
-        />
-      </main>
-    </div>
+          <ServiceSection
+            title="Data & Insights"
+            services={[
+              {
+                title: "Market Analysis",
+                description: "Identify trends and opportunities with advanced data science techniques and market intelligence.",
+              },
+              {
+                title: "Demand Forecasting",
+                description: "Predict sales patterns using sophisticated machine learning algorithms and predictive modeling.",
+              },
+              {
+                title: "Business Analytics",
+                description: "Transform raw data into actionable insights for strategic decision-making and growth optimization.",
+              },
+            ]}
+            visual="bubble"
+            reverse
+          />
+
+          <ServiceSection
+            title="AI-Powered Services"
+            services={[
+              {
+                title: "AI Agents",
+                description: "Intelligent automation systems that streamline workflows and enhance operational efficiency.",
+              },
+              {
+                title: "AI-first Advertising",
+                description: "Data-driven ad campaigns optimized with machine learning for maximum ROI and audience engagement.",
+              },
+              {
+                title: "Voice Support",
+                description: "Natural language processing systems for 24/7 customer support and interactive voice assistance.",
+              },
+              {
+                title: "Custom AI Features",
+                description: "Bespoke artificial intelligence solutions tailored to your specific business requirements and goals.",
+              },
+            ]}
+            visual="heart"
+          />
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 }
