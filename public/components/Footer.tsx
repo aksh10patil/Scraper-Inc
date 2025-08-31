@@ -18,14 +18,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 text-sm">
           {/* Address */}
           <div>
             <h3 className="font-semibold mb-4">Address</h3>
             <div className="space-y-4 text-gray-300">
               <div>
                 <p className="font-medium">Raipur</p>
-               
                 <p>T. +91 7225010093</p>
               </div>
               <div>
@@ -41,11 +40,53 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="/about" className="hover:text-white">About us</a></li>
-              <li><a href="/services" className="hover:text-white">What we do</a></li>
-              <li><a href="/work" className="hover:text-white">Projects</a></li>
-              <li><a href="/insights" className="hover:text-white">Insights</a></li>
-              <li><a href="/contact" className="hover:text-white">Contact</a></li>
+              <li>
+                <a href="/about" className="hover:text-white">
+                  About us
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="hover:text-white">
+                  What we do
+                </a>
+              </li>
+              <li>
+                <a href="/work" className="hover:text-white">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="/insights" className="hover:text-white">
+                  Insights
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources (new column) */}
+          <div className="space-y-2">
+            <h3 className="font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                <a href="/Terms" className="hover:text-white">
+                  Terms &amp; Conditions
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:text-white">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/docs" className="hover:text-white">
+                  Documentation
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -54,26 +95,42 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4">Social</h3>
               <ul className="space-y-2 text-gray-300">
-
-                <li><a href="https://www.linkedin.com/company/scraperinc" className="hover:text-white">LinkedIn</a></li>
-                <li><a href="https://x.com/Scraper_inc" className="hover:text-white">X / Twitter</a></li>
                 <li>
-                <a 
-                  href="https://www.instagram.com/scraperr_inc" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="hover:text-white"
-                >
-                  Instagram
-                </a>
-            </li>
-
+                  <a
+                    href="https://www.linkedin.com/company/108663985/"
+                    className="hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/scraper_inc/"
+                    className="hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/Scraper_inc"
+                    className="hover:text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    X/Twitter
+                  </a>
+                </li>
               </ul>
             </div>
-            
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
