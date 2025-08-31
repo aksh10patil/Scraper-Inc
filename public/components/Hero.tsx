@@ -160,13 +160,18 @@ export default function Hero() {
           <span className="text-purple-200">grows</span>{" "}
           <span className="font-serif italic font-light">with every interaction</span>
         </h1>
-        <motion.button
+        
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-6 px-6 py-2 rounded-full border border-gray-400 text-sm hover:bg-white hover:text-black transition"
         >
-          About us
-        </motion.button>
+          <Link
+            href="/about"
+            className="mt-6 inline-block px-6 py-2 rounded-full border border-gray-400 text-sm hover:bg-white hover:text-black transition"
+          >
+            About us
+          </Link>
+        </motion.div>
       </div>
 
       {/* Right Side Floating Bubbles */}
