@@ -6,7 +6,7 @@ export default function TermsPage() {
   return (
     <>
     <Navbar />
-    <div className="min-h-screen bg-[#070812] text-gray-200 px- py-20">
+    <div className="grmin-h-screen bg-[#070812] text-gray-200 px- py-20">
       <div className="max-w-3xl mx-auto">
         {/* Title */}
         <header className="text-center mb-8">
