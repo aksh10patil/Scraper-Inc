@@ -165,15 +165,11 @@ export default function TermsPage() {
             <Section number="12" title="Contact">
               <p>For questions regarding these Terms, contact us at:</p>
               <p className="mt-2 text-sm text-gray-300">
-                Email:{" "}
-                <a
-                  className="text-pink-400 underline"
-                  href="mailto:support@scraperinc.com"
-                >
-                  support@scraperinc.com
-                </a>
+                Email:{""}
+                contact@scraperr.cloud
+                
                 <br />
-                Address: [Your Company Address]
+                Address: Raipur, Chhattisgarh, India
               </p>
             </Section>
           </main>

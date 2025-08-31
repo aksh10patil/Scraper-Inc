@@ -82,11 +82,6 @@ export default function Footer() {
                   Privacy Policy
                 </a>
               </li>
-              <li>
-                <a href="/docs" className="hover:text-white">
-                  Documentation
-                </a>
-              </li>
             </ul>
           </div>
 
