@@ -101,7 +101,7 @@ const Page = () => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="placeholder-black"
+              className="placeholder-white"
             />
           </div>
 
@@ -113,7 +113,7 @@ const Page = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="placeholder-black"
+              className="placeholder-white"
             />
           </div>
 
@@ -124,7 +124,7 @@ const Page = () => {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="placeholder-black"
+              className="placeholder-white"
             />
           </div>
 
@@ -136,7 +136,7 @@ const Page = () => {
               onChange={handleInputChange}
               rows={4}
               required
-                className="placeholder-black"
+                className="placeholder-white"
             ></textarea>
           </div>
 
