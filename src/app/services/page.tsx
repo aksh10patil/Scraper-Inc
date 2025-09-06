@@ -100,6 +100,7 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
   };
 
   return (
+    
     <motion.div
       initial={{ opacity: 0, y: 60, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -181,7 +182,11 @@ const CreativeCard: React.FC<CardProps> = ({ title, description, index }) => {
       {/* Floating Elements */}
       <div className="absolute -top-2 -right-2 w-4 h-4 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:animate-pulse"></div>
       <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-white/15 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+    
     </motion.div>
+    
+   
+    
   );
 };
 
@@ -231,6 +236,45 @@ const Heart = () => (
   >
     <Image
       src="/bulb.webp"
+      alt="bulb"
+      width={400}
+      height={400}
+      className="drop-shadow-[0_25px_50px_rgba(236,72,153,0.4)] filter saturate-110"
+    />
+    {/* Floating hearts */}
+    {[...Array(3)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute text-pink-400/60 text-lg"
+        animate={{
+          y: [0, -30, 0],
+          opacity: [0.4, 1, 0.4],
+          scale: [0.8, 1.2, 0.8]
+        }}
+        transition={{
+          duration: 3 + i * 0.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        style={{
+          top: `${40 + i * 10}%`,
+          left: `${25 + i * 20}%`,
+        }}
+      >
+        .
+      </motion.div>
+    ))}
+  </motion.div>
+);
+
+const Brain = () => (
+  <motion.div
+    whileHover={{ scale: 1.05, rotateY: -15 }}
+    transition={{ duration: 0.5 }}
+    className="relative"
+  >
+    <Image
+      src="/brain.webp"
       alt="3D heart"
       width={400}
       height={400}
@@ -266,7 +310,7 @@ const Heart = () => (
 interface ServiceSectionProps {
   title: string;
   services: { title: string; description: string }[];
-  visual: "bubble" | "heart";
+  visual: "bubble" | "heart" | "brain";
   reverse?: boolean;
 }
 
@@ -327,7 +371,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
         transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        {visual === "bubble" ? <Bubble /> : <Heart />}
+        {visual === "bubble" ? <Bubble /> : visual === "heart" ? <Heart /> : <Brain />}
       </motion.div>
     </section>
   );
@@ -337,8 +381,21 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 export default function Service() {
   return (
     <>
+<<<<<<< HEAD
       <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
         <Navbar />
+=======
+    <Navbar />
+    
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/80 to-black relative overflow-hidden">
+      
+      {/* Global Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/3 to-purple-600/3 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      </div>
+>>>>>>> 0422a046447ecb29dfee222a3326e5f9e8694b73
 
         {/* Global Background Elements */}
         <div className="fixed inset-0 pointer-events-none">
@@ -410,6 +467,7 @@ export default function Service() {
             visual="heart"
           />
 
+<<<<<<< HEAD
           <ServiceSection
             title="Data & Insights"
             services={[
@@ -455,6 +513,34 @@ export default function Service() {
         </main>
       </div>
       <Footer />
+=======
+        <ServiceSection
+          title="AI-Powered Services"
+          services={[
+            {
+              title: "AI Agents",
+              description: "Intelligent automation systems that streamline workflows and enhance operational efficiency.",
+            },
+            {
+              title: "AI-first Advertising",
+              description: "Data-driven ad campaigns optimized with machine learning for maximum ROI and audience engagement.",
+            },
+            {
+              title: "Voice Support",
+              description: "Natural language processing systems for 24/7 customer support and interactive voice assistance.",
+            },
+            {
+              title: "Custom AI Features",
+              description: "Bespoke artificial intelligence solutions tailored to your specific business requirements and goals.",
+            },
+          ]}
+          visual="brain"
+        />
+      </main>
+    </div>
+
+    <Footer />
+>>>>>>> 0422a046447ecb29dfee222a3326e5f9e8694b73
     </>
   );
 }

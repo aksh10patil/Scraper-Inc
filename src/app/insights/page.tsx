@@ -2,27 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import Image from "next/image";
 import Navbar from "../../../public/components/Navbar";
 import Footer from "../../../public/components/Footer";
 import CardsSection from "../../../public/components/CardSection";
-import { TextHoverEffect } from "../../../public/components/TextHoverEffect";
+import { LampDemo } from "../../../public/components/LampLight";
+
 
 export default function Insights() {
   return (
     <>
     <Navbar />
     <div className="gradient-background">
+      <LampDemo />
 
    
     <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
         <div className="space-y-6">
-          <p className="text-white/80 text-lg font-medium">Scraperr Insights*</p>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
-            Scraperr: thinking big, <br />
-            <span className="text-blue-300">starting Scraperr</span>
+          Scraperr: Scraping the Web,  <br />
+            <span className="text-blue-300">Building the Future</span>
           </h1>
 
                 <p className="text-gray-200 text-lg leading-relaxed">
@@ -30,10 +32,6 @@ export default function Insights() {
         spark energy, inspire action, and feel alive.
       </p>
 
-
-          <button className="px-6 py-3 rounded-full bg-pink-600 text-white font-medium hover:bg-pink-700 transition">
-            Continue reading
-          </button>
         </div>
 
         {/* Right Graphic Section */}
@@ -49,15 +47,30 @@ export default function Insights() {
           </motion.div>
 
           {/* Placeholder for network background */}
-          <div className="w-full h-[400px] rounded-xl bg-gradient-to-tr from-indigo-800/40 to-purple-800/20 border border-white/10 backdrop-blur-md flex items-center justify-center">
-            <p className="text-gray-400">[Network graphic placeholder]</p>
-          </div>
+          <div className="w-full h-[400px] rounded-xl backdrop-blur-md flex items-center justify-center overflow-hidden">
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        whileHover={{ scale: 1.05 }} // optional hover effect
+        className="w-full h-full"
+      >
+        <Image
+          src="/hands_touch.webp"
+          alt="Preview"
+          width={400}
+          height={400}
+          className="object-cover w-full h-full rounded-xl"
+        />
+      </motion.div>
+    </div>
         </div>
       </div>
     </section>
     
     <CardsSection />
     </div>
+    
     <Footer />
     </>
   );

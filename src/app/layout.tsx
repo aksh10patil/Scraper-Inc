@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import Cursor from "../../public/components/Cursor"; 
-import { BackgroundGradientAnimation } from "../../public/components/GradientAnimation"; // 👈 import it
+
 
 // Fonts
 const montserrat = Montserrat({
@@ -22,11 +22,40 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Metadata (server-side only)
 export const metadata: Metadata = {
-  title: "Scraperr Inc",
-  description: "Developing Scalable Solutions Globally",
+  metadataBase: new URL("https://www.scraperr.cloud"),
+  title: {
+    default: "Scraperr",
+    template: "%s | Scraperr",
+  },
+  description: "Providing Web and AI solutions",
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://www.scraperr.cloud",
+    languages: {
+      en: "/en",
+      hi: "/hi",
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.scraperr.cloud",
+    title: "Scraperr",
+    description: "Tech Solutions.",
+    siteName: "Scraperr",
+    images: ["https://www.scraperr.cloud/scraperr-hq2.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@scraperr_inc",
+    creator: "@scraperr_inc",
+  },
+  manifest: "/manifest.json",
+  themeColor: "#000000",
 };
+
+
+
 
 // Root Layout
 export default function RootLayout({
@@ -37,10 +66,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased min-h-screen`}
       >
-        {/* Background stays fixed for all pages */}
-      
-
-        {/* Foreground content */}
+            {/* Foreground content */}
         <div className="relative z-10">
           {children}
           <Cursor /> 
