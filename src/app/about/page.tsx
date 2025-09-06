@@ -1,72 +1,58 @@
 "use client";
 
-import { motion, useScroll, useTransform, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Navbar from "../../../public/components/Navbar";
+import Footer from "../../../public/components/Footer";
 
-// NOTE: next/image is not supported. Using standard <img> tag instead.
-// import Image from "next/image";
+const teamMembers = [
+  { name: "Rajdeep Patil", role: "Creative Director", img: "/team/rajdeep.jpg" },
+  { name: "Byom Nath Jha", role: "Director of Client Relations and Project Management", img: "/team/byom.jpg" },
+  { name: "Abhishek Swarnakar", role: "Lead Developer", img: "/team/abhishek.jpg" },
+  { name: "Vishaal Wadhwa", role: "Marketing Strategist", img: "/team/vishaal.jpg" },
+];
 
-// NOTE: Assuming Navbar and Footer components are available in the public directory
-// import Navbar from "../../../public/components/Navbar";
-// import Footer from "../../../public/components/Footer";
-
-// Reusable component for gradient text, improving code readability.
 const GradientText = ({ children }) => (
   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">
     {children}
   </span>
 );
 
-export default function AboutPage() {
+export default function About() {
   const { scrollY } = useScroll();
-  const rotatingShapeControls = useAnimationControls();
+  const controls = useAnimation();
+  const [current, setCurrent] = useState(0);
 
-  // Animation for the continuously rotating 3D shape in the hero section.
   useEffect(() => {
-    rotatingShapeControls.start({
+    controls.start({
       rotate: [0, 5, -5, 0],
       transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
     });
-  }, [rotatingShapeControls]);
+  }, [controls]);
 
-  // Parallax effect for the 3D shapes.
-  const rotateHeroShape = useTransform(scrollY, [0, 1000], [0, 100]);
-  const rotateJourneyShape = useTransform(scrollY, [0, 1000], [0, -100]);
-
-  // Framer Motion variants for section entrance animations.
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
-  const leftPanelVariants = {
-    hidden: { opacity: 0, x: -60 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
-  };
-
-  const rightPanelVariants = {
-    hidden: { opacity: 0, x: 60 },
-    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
-  };
+  // Rotate based on scroll position, but only up to a certain point
+  const rotate = useTransform(scrollY, [0, 1000], [0, 100]);
+  const rotateReverse = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
     <>
-      <div className="bg-black text-white relative overflow-hidden font-inter">
+      <div className="bg-black text-white relative overflow-hidden">
         {/* Global Gradient and Particle Background */}
         <div className="fixed inset-0 pointer-events-none z-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
-        {/* <Navbar /> */}
+        <Navbar />
 
-        {/* --- Section 1: Hero --- */}
-        <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-20 overflow-hidden text-center md:text-left">
+        {/* --- Section 1 - Hero --- */}
+        <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-20 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex-1 max-w-2xl space-y-6 z-10"
+            className="flex-1 max-w-2xl space-y-6 z-10 text-center md:text-left"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Collaborating with <br />
@@ -76,15 +62,14 @@ export default function AboutPage() {
             </h1>
           </motion.div>
           <motion.div
-            animate={rotatingShapeControls}
-            style={{ rotate: rotateHeroShape }}
+            animate={controls}
+            style={{ rotate: rotate }}
             initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="flex-1 relative w-full md:w-[28rem] lg:w-[32rem] h-auto mt-10 md:mt-0 flex justify-center"
+            className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mt-10 md:mt-0"
           >
-            <img
+            <Image
               src="/triangle.webp"
               alt="3D Shape"
               width={600}
@@ -93,33 +78,33 @@ export default function AboutPage() {
             />
           </motion.div>
         </section>
-        
-        {/* --- Section 2: Animated Text --- */}
+
+        {/* --- Section 2 - Brand Evolution Studio --- */}
         <section className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 py-20 text-center overflow-hidden">
           <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
             className="max-w-4xl space-y-6 z-10"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight shimmer">
-              We are a <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">Brand Evolution Studio</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+              We are a <GradientText>Brand Evolution Studio</GradientText>
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-300 animate-fade-in-up">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-300">
               We partner <span className="font-semibold text-white">closely with our clients</span> to shape their vision into meaningful brand experiences that connect, transform, and empower their businesses across every touchpoint.
             </p>
           </motion.div>
         </section>
 
-        {/* --- Section 3: Other Projects --- */}
-        <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 overflow-hidden text-center md:text-left">
+        {/* --- Section 3 - Other Projects --- */}
+        <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 overflow-hidden">
           <motion.div
-            variants={leftPanelVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 z-10 space-y-6 max-w-2xl"
+            className="flex-1 z-10 space-y-6 max-w-2xl text-center md:text-left"
           >
             <h2 className="text-4xl md:text-5xl font-bold">
               Other <span className="text-purple-300">Projects</span>
@@ -137,13 +122,13 @@ export default function AboutPage() {
             </motion.a>
           </motion.div>
           <motion.div
-            variants={rightPanelVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
             className="flex-1 flex justify-center mt-10 md:mt-0"
           >
-            <img
+            <Image
               src="/ourproject.webp"
               alt="Our Project"
               width={600}
@@ -153,16 +138,16 @@ export default function AboutPage() {
           </motion.div>
         </section>
 
-        {/* --- Section 4: Our Journey --- */}
-        <section className="relative flex flex-col-reverse md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 overflow-hidden text-center md:text-left">
+        {/* --- Section 4 - Our Journey --- */}
+        <section className="relative flex flex-col-reverse md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 overflow-hidden">
           <motion.div
-            variants={leftPanelVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 relative w-full md:w-[28rem] lg:w-[32rem] h-auto mb-10 md:mb-0 flex justify-center"
+            className="flex-1 relative w-[15rem] md:w-[28rem] lg:w-[32rem] h-auto mb-10 md:mb-0"
           >
-            <img
+            <Image
               src="/journey.webp"
               alt="3D Heart"
               width={600}
@@ -171,11 +156,11 @@ export default function AboutPage() {
             />
           </motion.div>
           <motion.div
-            variants={rightPanelVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex-1 z-10 max-w-2xl space-y-6"
+            className="flex-1 z-10 max-w-2xl space-y-6 text-center md:text-left"
           >
             <h2 className="text-4xl md:text-5xl font-semibold">
               Our <span className="font-serif italic text-purple-200">journey</span>
@@ -188,112 +173,70 @@ export default function AboutPage() {
             </p>
           </motion.div>
         </section>
+
+        {/* --- Section 5 - Meet the People --- */}
+        <section className="relative flex flex-col md:flex-row items-center justify-between min-h-screen px-6 md:px-20 py-20 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex-1 flex flex-col items-center md:items-start z-10 text-center md:text-left"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Meet the people <br />
+              <span className="font-light text-gray-400">behind each project</span>
+            </h2>
+            <p className="text-gray-300 max-w-lg mb-10">
+              A multidisciplinary and passionate team, with a shared vision, to create, enhance and future-proof brands.
+            </p>
+            {/* Profile Card */}
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="rounded-2xl p-6 shadow-lg max-w-sm text-center md:text-left bg-gray-800/30 backdrop-blur-md border border-purple-300/30"
+            >
+              <Image
+                src={teamMembers[current].img}
+                alt={teamMembers[current].name}
+                width={400}
+                height={400}
+                className="rounded-xl object-cover mb-6"
+              />
+              <h3 className="text-2xl font-semibold text-white">
+                {teamMembers[current].name}
+              </h3>
+              <p className="text-purple-200 mt-2">{teamMembers[current].role}</p>
+            </motion.div>
+          </motion.div>
+
+          {/* Right - Team Names */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex-1 z-10 mt-12 md:mt-0"
+          >
+            <ul className="space-y-4 text-2xl md:text-3xl font-medium">
+              {teamMembers.map((member, index) => (
+                <li
+                  key={member.name}
+                  onMouseEnter={() => setCurrent(index)}
+                  className={`cursor-pointer transition-colors duration-300 ${
+                    index === current ? "text-white" : "text-gray-500 hover:text-white"
+                  }`}
+                >
+                  {member.name}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </section>
       </div>
-      {/* <Footer /> */}
-      <style>
-        {`
-        .dash {
-          animation: dashArray 2s ease-in-out infinite,
-            dashOffset 2s linear infinite;
-        }
-
-        .spin {
-          animation: spinDashArray 2s ease-in-out infinite,
-            spin 8s ease-in-out infinite,
-            dashOffset 2s linear infinite;
-          transform-origin: center;
-        }
-
-        @keyframes dashArray {
-          0% {
-            stroke-dasharray: 0 1 359 0;
-          }
-
-          50% {
-            stroke-dasharray: 0 359 1 0;
-          }
-
-          100% {
-            stroke-dasharray: 359 1 0 0;
-          }
-        }
-
-        @keyframes spinDashArray {
-          0% {
-            stroke-dasharray: 270 90;
-          }
-
-          50% {
-            stroke-dasharray: 0 360;
-          }
-
-          100% {
-            stroke-dasharray: 270 90;
-          }
-        }
-
-        @keyframes dashOffset {
-          0% {
-            stroke-dashoffset: 365;
-          }
-
-          100% {
-            stroke-dashoffset: 5;
-          }
-        }
-
-        @keyframes spin {
-          0% {
-            rotate: 0deg;
-          }
-
-          12.5%, 25% {
-            rotate: 270deg;
-          }
-
-          37.5%, 50% {
-            rotate: 540deg;
-          }
-
-          62.5%, 75% {
-            rotate: 810deg;
-          }
-
-          87.5%, 100% {
-            rotate: 1080deg;
-          }
-        }
-
-        .shimmer {
-          background-size: 200% auto;
-          background-image: linear-gradient(to right, #973BED 0%, #007CFF 50%, #973BED 100%);
-          animation: shimmer 5s linear infinite;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        @keyframes shimmer {
-          to {
-            background-position: 200% center;
-          }
-        }
-        
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out;
-        }
-        `}
-      </style>
+      <Footer />
     </>
   );
 }
