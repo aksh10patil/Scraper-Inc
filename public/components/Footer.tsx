@@ -77,11 +77,6 @@ export default function Footer() {
                   Terms &amp; Conditions
                 </a>
               </li>
-              <li>
-                <a href="/privacy" className="hover:text-white">
-                  Privacy Policy
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -102,7 +97,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/scraper_inc/"
+                    href="https://www.instagram.com/scraperr_inc/"
                     className="hover:text-white"
                     target="_blank"
                     rel="noopener noreferrer"
