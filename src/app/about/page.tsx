@@ -49,8 +49,6 @@ export default function About() {
   </motion.div>
 </section>
 
-
-
           {/* Section 2 - Brand Evolution Studio */}
           <section className="relative flex flex-col items-center justify-center min-h-[80vh] px-6 md:px-16 py-20 text-center">
             <div className="max-w-4xl space-y-6 z-10">
