@@ -15,21 +15,26 @@
 }
 
 
-.gradient-background {
+/* This class ONLY contains the gradient style */
+.gradient-style {
   background: radial-gradient(
       circle at top center,
-      rgba(32, 1, 1, 0.203),   /* glowing lavender */
-      rgba(186, 85, 211, 0.3),    /* orchid fade */
+      rgba(32, 1, 1, 0.203),
+      rgba(186, 85, 211, 0.3),
       transparent 70%
     ),
     radial-gradient(
       circle at bottom center,
-      rgba(147, 112, 219, 0.4),   /* deeper lavender (darkorchid) */
-      rgba(75, 0, 130, 0.3),      /* indigo tint for depth */
+      rgba(147, 112, 219, 0.4),
+      rgba(75, 0, 130, 0.3),
       transparent 70%
     ),
-    #000000; /* base black background */
-  height: 100%;
+    #000000;
+}
+
+/* This class ONLY handles the full-screen layout */
+.full-screen-layout {
+  min-height: 100vh;
   width: 100%;
 }
 

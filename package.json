@@ -19,6 +19,7 @@
     "motion": "^12.23.12",
     "next": "15.5.0",
     "nodemailer": "^7.0.5",
+    "openai": "^5.20.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "simplex-noise": "^4.0.3",
